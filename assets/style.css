@@ -392,3 +392,150 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 @media(max-width:900px){
   .contact-columns{grid-template-columns:1fr;gap:24px}
 }
+
+/* latest refinements: smaller handwritten note + polished business-card material */
+.hand-note{
+  left:14% !important;
+  right:13% !important;
+  bottom:6.5% !important;
+  padding:12px 14px !important;
+  border-radius:16px !important;
+  font-size:clamp(17px,1.35vw,22px) !important;
+  line-height:1.32 !important;
+  transform:rotate(-4deg) !important;
+}
+.hand-note::before{
+  width:52px !important;
+  height:14px !important;
+  top:-7px !important;
+  left:18px !important;
+}
+.hand-note::after{
+  inset:-6px !important;
+  border-radius:20px !important;
+}
+
+.doc-card-contact{
+  grid-column:1/-1 !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1.18fr) minmax(330px,.82fr) !important;
+  min-height:430px;
+}
+.business-card-preview{
+  position:relative;
+  padding:26px;
+  background:linear-gradient(145deg,#0b0b0c,#111214);
+  border-right:1px solid var(--line2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.preview-type{
+  position:absolute;
+  top:20px;
+  left:22px;
+  z-index:4;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(10,10,11,.72);
+  backdrop-filter:blur(8px);
+}
+.preview-frame{
+  width:100%;
+  aspect-ratio:1120/740;
+  max-height:360px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  background:#0b0b0c;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+.preview-frame iframe{
+  width:1120px;
+  height:740px;
+  border:0;
+  transform-origin:top left;
+  transform:scale(var(--preview-scale,.56));
+  pointer-events:none;
+  display:block;
+}
+.business-card-info{
+  padding:36px 34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:24px;
+  background:linear-gradient(180deg,#17191b,#111214);
+}
+.business-card-info h3{
+  font-size:34px;
+  line-height:1.02;
+  margin:8px 0 12px;
+}
+.business-card-info p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+.qr-panel{
+  display:grid;
+  grid-template-columns:116px 1fr;
+  gap:18px;
+  align-items:center;
+  padding:16px;
+  border:1px solid var(--line2);
+  border-radius:20px;
+  background:rgba(255,255,255,.025);
+}
+.qr-panel img{
+  width:116px;
+  height:116px;
+  border-radius:14px;
+  background:#fff;
+  padding:7px;
+  object-fit:contain;
+}
+.qr-panel b{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+}
+.qr-panel span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+.business-open{
+  display:inline-flex;
+  width:max-content;
+  padding:11px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:700;
+  color:#f4efe7;
+}
+.business-open:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.035)}
+@media(max-width:1100px){
+  .doc-card-contact{grid-template-columns:1fr !important}
+  .business-card-preview{border-right:0;border-bottom:1px solid var(--line2)}
+  .preview-frame{max-height:320px}
+}
+@media(max-width:700px){
+  .hand-note{
+    left:14% !important;
+    right:10% !important;
+    bottom:5% !important;
+    padding:10px 12px !important;
+    font-size:15px !important;
+    line-height:1.28 !important;
+  }
+  .business-card-preview{padding:20px}
+  .business-card-info{padding:26px 22px}
+  .qr-panel{grid-template-columns:92px 1fr}
+  .qr-panel img{width:92px;height:92px}
+}
