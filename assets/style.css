@@ -786,3 +786,27 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
   .qr-copy{text-align:left}
   .qr-card{width:150px;height:150px}
 }
+
+/* NUiDE material card descriptor */
+.nyigde-visual-copy{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.nyigde-marketplace{
+  display:inline-flex;
+  width:max-content;
+  max-width:90%;
+  padding:7px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.045);
+  color:#d9d2c8;
+  font-size:10px;
+  line-height:1.2;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:700;
+}
