@@ -1287,3 +1287,38 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
     max-width:240px !important;
   }
 }
+
+/* NDA notice in legal portfolio section */
+.catalog-nda-note{
+  margin:18px 0 24px;
+  padding:18px 20px;
+  border:1px solid var(--line2);
+  border-radius:18px;
+  background:rgba(255,255,255,.035);
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.65;
+}
+.catalog-nda-note strong{
+  color:var(--text);
+  font-weight:700;
+}
+.catalog-nda-note a{
+  display:inline-block;
+  margin-left:8px;
+  color:var(--text);
+  font-weight:700;
+  text-decoration:none;
+}
+.catalog-nda-note a:hover{
+  text-decoration:underline;
+}
+@media(max-width:700px){
+  .catalog-nda-note{
+    padding:16px;
+  }
+  .catalog-nda-note a{
+    display:block;
+    margin:10px 0 0;
+  }
+}
