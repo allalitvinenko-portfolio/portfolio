@@ -108,3 +108,20 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
  .workflow-step{min-height:0;border-right:0}
  .format-cloud span{font-size:12px}
 }
+
+.hero-roles-en{
+  margin-top:14px;
+  color:var(--muted2);
+  font-size:12px;
+  line-height:1.6;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.hero-roles-en span{
+  color:#69635c;
+  margin:0 5px;
+}
+@media(max-width:700px){
+  .hero-roles-en{font-size:11px;letter-spacing:.055em}
+}
