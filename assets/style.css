@@ -138,3 +138,69 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
  letter-spacing:.02em;
 }
 .material-link:hover{color:#fff}
+
+/* hero editorial accents */
+.hero-photo{position:relative;padding-top:76px;padding-bottom:86px}
+.portfolio-mark{
+  position:absolute;top:24px;left:28px;z-index:3;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(24px,2.2vw,38px);letter-spacing:.12em;
+  color:#f1ece4;font-weight:700
+}
+.hand-note{
+  position:absolute;left:34px;right:26px;bottom:24px;z-index:3;
+  font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive;
+  font-size:14px;line-height:1.45;color:#d9d1c6;
+  transform:rotate(-3deg);transform-origin:left center;
+  text-shadow:0 1px 14px rgba(0,0,0,.55)
+}
+.hand-note:before{
+  content:"";display:block;width:68px;border-top:1px solid rgba(255,255,255,.34);
+  margin:0 0 8px 2px;transform:rotate(-2deg)
+}
+.stats-eight{grid-template-columns:repeat(4,1fr)}
+.materials-section{
+  background:linear-gradient(145deg,#0b0b0c,#121417);
+}
+.materials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.doc-card{
+  display:block;text-decoration:none;border:1px solid var(--line);
+  border-radius:26px;overflow:hidden;background:rgba(255,255,255,.018);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease
+}
+.doc-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.028)}
+.doc-visual{
+  position:relative;min-height:260px;padding:24px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-bottom:1px solid var(--line2);overflow:hidden
+}
+.doc-visual:before{
+  content:"";position:absolute;inset:0;background:
+  linear-gradient(135deg,rgba(255,255,255,.07),transparent 38%),
+  radial-gradient(circle at 76% 25%,rgba(255,255,255,.10),transparent 28%);
+  pointer-events:none
+}
+.doc-visual strong{
+  position:relative;z-index:1;font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(44px,5.2vw,76px);line-height:.85;letter-spacing:-.05em;
+  color:rgba(244,240,232,.85)
+}
+.doc-type,.doc-open{position:relative;z-index:1;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#c6beb3}
+.doc-open{align-self:flex-end;font-weight:700}
+.doc-realestate .doc-visual{background:linear-gradient(150deg,#5f6672,#252a31 58%,#111214)}
+.doc-nyigde .doc-visual{background:linear-gradient(150deg,#1e2a45,#121826 58%,#0d0f14)}
+.doc-card-contact .doc-visual{background:linear-gradient(150deg,#38332e,#181716 60%,#0e0e0f)}
+.doc-copy{padding:22px 22px 24px}
+.doc-copy h3{font-size:25px;line-height:1.05;margin:8px 0 10px}
+.doc-copy p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+@media(max-width:1020px){
+  .stats-eight{grid-template-columns:repeat(2,1fr)}
+  .materials-grid{grid-template-columns:1fr}
+  .doc-visual{min-height:220px}
+}
+@media(max-width:700px){
+  .hero-photo{padding-top:70px;padding-bottom:128px}
+  .portfolio-mark{left:22px;top:22px}
+  .hand-note{left:24px;right:22px;bottom:26px;font-size:13px}
+}
+@media(max-width:520px){.stats-eight{grid-template-columns:1fr}}
