@@ -618,3 +618,171 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
  .detailed-card{min-height:0}
  .catalog-groups{gap:34px}
 }
+
+/* highlighted online business card */
+.contact-feature-card{
+  grid-column:1/-1;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);
+  gap:0;
+  border:1px solid rgba(229,220,208,.22);
+  border-radius:30px;
+  overflow:hidden;
+  text-decoration:none;
+  background:
+    radial-gradient(circle at 12% 8%,rgba(255,255,255,.07),transparent 28%),
+    linear-gradient(135deg,#151617 0%,#191a1c 58%,#111214 100%);
+  box-shadow:0 24px 70px rgba(0,0,0,.28);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.contact-feature-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(229,220,208,.42);
+  box-shadow:0 30px 80px rgba(0,0,0,.36);
+}
+.contact-feature-main{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  align-items:stretch;
+  min-height:330px;
+}
+.contact-feature-photo{
+  position:relative;
+  overflow:hidden;
+  border-right:1px solid rgba(255,255,255,.07);
+}
+.contact-feature-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  filter:grayscale(1);
+  transform:scale(1.02);
+}
+.contact-feature-photo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,transparent 65%,rgba(21,22,23,.38));
+  pointer-events:none;
+}
+.contact-feature-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:38px 40px;
+}
+.contact-feature-eyebrow{
+  color:#b7aea4;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.contact-feature-copy h3{
+  max-width:680px;
+  margin:0 0 14px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(31px,3.1vw,48px);
+  line-height:.98;
+  letter-spacing:-.035em;
+  color:#f3eee7;
+}
+.contact-feature-copy p{
+  max-width:720px;
+  margin:0;
+  color:#bdb5ab;
+  font-size:14px;
+  line-height:1.75;
+}
+.contact-feature-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  margin-top:24px;
+  padding:11px 15px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:999px;
+  color:#f4efe7;
+  font-size:12px;
+  font-weight:700;
+  background:rgba(255,255,255,.025);
+}
+.contact-feature-card:hover .contact-feature-cta{
+  background:#efe8de;
+  color:#171717;
+  border-color:#efe8de;
+}
+.contact-feature-qr{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:34px;
+  border-left:1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg,rgba(243,238,231,.055),rgba(243,238,231,.02));
+}
+.contact-feature-qr::before{
+  content:"ЗБЕРЕГТИ КОНТАКТ";
+  position:absolute;
+  top:22px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  color:#8f877e;
+  font-size:9px;
+  letter-spacing:.16em;
+}
+.qr-card{
+  width:176px;
+  height:176px;
+  margin-top:14px;
+  padding:12px;
+  border-radius:22px;
+  background:#f7f4ef;
+  box-shadow:0 16px 34px rgba(0,0,0,.24);
+}
+.qr-card img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.qr-copy{text-align:center;max-width:220px}
+.qr-copy strong{
+  display:block;
+  color:#f0ebe4;
+  font-size:14px;
+  margin-bottom:5px;
+}
+.qr-copy span{
+  display:block;
+  color:#a9a198;
+  font-size:11px;
+  line-height:1.45;
+}
+@media(max-width:1050px){
+  .contact-feature-card{grid-template-columns:1fr}
+  .contact-feature-qr{
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.08);
+    flex-direction:row;
+    justify-content:flex-start;
+    padding:28px 34px;
+  }
+  .contact-feature-qr::before{display:none}
+  .qr-copy{text-align:left}
+}
+@media(max-width:700px){
+  .contact-feature-main{grid-template-columns:1fr}
+  .contact-feature-photo{height:240px;border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .contact-feature-copy{padding:28px 24px}
+  .contact-feature-copy h3{font-size:32px}
+  .contact-feature-qr{flex-direction:column;align-items:flex-start;padding:26px 24px}
+  .qr-copy{text-align:left}
+  .qr-card{width:150px;height:150px}
+}
