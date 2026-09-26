@@ -371,3 +371,24 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
     transform:rotate(-4deg) !important;
   }
 }
+
+/* contacts: two-column layout */
+.contact-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  width:100%;
+}
+.contact-column-title{
+  margin-bottom:10px;
+  color:var(--muted2);
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.contact-column .contact-links{display:flex;flex-direction:column;gap:0}
+.contact-column .contact-links a{min-height:82px}
+@media(max-width:900px){
+  .contact-columns{grid-template-columns:1fr;gap:24px}
+}
