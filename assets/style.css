@@ -276,3 +276,31 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
  .business-preview{min-height:260px}
  .lane-head h3{font-size:28px}
 }
+
+/* move handwritten note below the face */
+.hand-note{
+  top:auto !important;
+  bottom:7.5% !important;
+  left:36px !important;
+  right:36px !important;
+  transform:rotate(-2.2deg) !important;
+  font-size:clamp(16px,1.35vw,20px) !important;
+  line-height:1.42 !important;
+  padding:16px 18px !important;
+}
+@media(max-width:1020px){
+  .hand-note{
+    top:auto !important;
+    bottom:7% !important;
+    font-size:17px !important;
+  }
+}
+@media(max-width:700px){
+  .hand-note{
+    left:22px !important;
+    right:22px !important;
+    bottom:5% !important;
+    font-size:14px !important;
+    padding:13px 14px !important;
+  }
+}
