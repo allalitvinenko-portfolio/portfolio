@@ -1028,3 +1028,69 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
     padding:26px 24px;
   }
 }
+
+/* final hero note geometry to match approved reference */
+.hand-note{
+  left:12% !important;
+  right:4% !important;
+  bottom:6.5% !important;
+  width:auto !important;
+  max-width:none !important;
+  padding:11px 18px !important;
+  border-radius:16px !important;
+  background:linear-gradient(135deg,rgba(238,239,241,.93),rgba(214,217,220,.84)) !important;
+  color:rgba(35,36,38,.94) !important;
+  font-family:"Segoe Script","Snell Roundhand","Brush Script MT","Comic Sans MS",cursive !important;
+  font-size:clamp(15px,1.18vw,19px) !important;
+  line-height:1.25 !important;
+  letter-spacing:.004em !important;
+  font-weight:400 !important;
+  text-shadow:none !important;
+  transform:rotate(-2deg) !important;
+  box-shadow:0 12px 30px rgba(0,0,0,.20),0 0 20px rgba(220,223,226,.08) !important;
+  backdrop-filter:blur(7px) !important;
+  -webkit-backdrop-filter:blur(7px) !important;
+}
+.hand-note::before{
+  content:"" !important;
+  position:absolute !important;
+  top:-6px !important;
+  left:18px !important;
+  width:48px !important;
+  height:12px !important;
+  border:0 !important;
+  border-radius:5px !important;
+  background:rgba(224,226,228,.32) !important;
+  transform:rotate(4deg) !important;
+  box-shadow:0 3px 8px rgba(0,0,0,.07) !important;
+}
+.hand-note::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:-5px !important;
+  z-index:-1 !important;
+  border-radius:20px !important;
+  background:rgba(205,208,211,.10) !important;
+  filter:blur(10px) !important;
+  pointer-events:none !important;
+}
+@media(max-width:1020px){
+  .hand-note{
+    left:10% !important;
+    right:4% !important;
+    bottom:6% !important;
+    font-size:16px !important;
+    padding:10px 16px !important;
+  }
+}
+@media(max-width:700px){
+  .hand-note{
+    left:8% !important;
+    right:3% !important;
+    bottom:5% !important;
+    font-size:14px !important;
+    line-height:1.22 !important;
+    padding:9px 13px !important;
+    transform:rotate(-1.5deg) !important;
+  }
+}
