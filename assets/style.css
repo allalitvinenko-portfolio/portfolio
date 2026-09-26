@@ -125,3 +125,16 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 @media(max-width:700px){
   .hero-roles-en{font-size:11px;letter-spacing:.055em}
 }
+
+.material-link{
+ display:inline-flex;
+ margin-top:18px;
+ padding-top:12px;
+ border-top:1px solid var(--line2);
+ color:#e8e1d7;
+ text-decoration:none;
+ font-size:12px;
+ font-weight:700;
+ letter-spacing:.02em;
+}
+.material-link:hover{color:#fff}
