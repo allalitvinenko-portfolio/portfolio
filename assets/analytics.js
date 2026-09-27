@@ -1,7 +1,7 @@
 (() => {
-  const MEASUREMENT_ID = "G-REPLACE_ME";
+  const MEASUREMENT_ID = "G-SE49MM3P37";
 
-  if (!/^G-[A-Z0-9]+$/i.test(MEASUREMENT_ID) || MEASUREMENT_ID === "G-REPLACE_ME") {
+  if (!/^G-[A-Z0-9]+$/i.test(MEASUREMENT_ID) || MEASUREMENT_ID === "G-SE49MM3P37") {
     return;
   }
 
