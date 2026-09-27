@@ -10,18 +10,25 @@
     let contactType = null;
 
     if (href.startsWith("mailto:")) {
-      linkType = "email";
       contactType = "email";
     } else if (href.startsWith("tel:")) {
-      linkType = "phone";
       contactType = "phone";
     } else if (/^https?:\/\/(www\.)?linkedin\.com\//i.test(absoluteUrl)) {
-      linkType = "outbound";
       contactType = "linkedin";
     } else if (/^https?:\/\/(t\.me|telegram\.me)\//i.test(absoluteUrl)) {
-      linkType = "outbound";
       contactType = "telegram";
-    } else if (href.startsWith("#")) {
+    }
+
+    if (contactType) {
+      window.gtag("event", "contact_click", {
+        contact_type: contactType,
+        link_url: absoluteUrl,
+        link_text: linkText
+      });
+      return;
+    }
+
+    if (href.startsWith("#")) {
       linkType = "anchor";
     } else {
       try {
@@ -35,13 +42,5 @@
       link_text: linkText,
       link_type: linkType
     });
-
-    if (contactType) {
-      window.gtag("event", "contact_click", {
-        contact_type: contactType,
-        link_url: absoluteUrl,
-        link_text: linkText
-      });
-    }
   });
 })();
