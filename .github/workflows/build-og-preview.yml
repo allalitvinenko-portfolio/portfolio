@@ -28,7 +28,8 @@ jobs:
       - name: Build baseline JPEG
         run: |
           python - <<'PY'
-          from PIL import Image
+          from PIL import Image, ImageFile
+          ImageFile.LOAD_TRUNCATED_IMAGES = True
           src = Image.open('assets/social-preview-alla-litvinenko.jpg').convert('RGB')
           out = src.resize((1200, 630), Image.Resampling.LANCZOS)
           out.save(
