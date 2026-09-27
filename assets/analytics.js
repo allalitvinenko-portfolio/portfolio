@@ -1,26 +1,7 @@
 (() => {
-  const MEASUREMENT_ID = "G-SE49MM3P37";
-
-  if (!/^G-[A-Z0-9]+$/i.test(MEASUREMENT_ID) || MEASUREMENT_ID === "G-SE49MM3P37") {
-    return;
-  }
-
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () {
-    window.dataLayer.push(arguments);
-  };
-
-  const tag = document.createElement("script");
-  tag.async = true;
-  tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(MEASUREMENT_ID);
-  document.head.appendChild(tag);
-
-  window.gtag("js", new Date());
-  window.gtag("config", MEASUREMENT_ID);
-
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a[href]");
-    if (!link) return;
+    if (!link || typeof window.gtag !== "function") return;
 
     const href = link.getAttribute("href") || "";
     const absoluteUrl = link.href || href;
