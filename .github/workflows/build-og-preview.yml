@@ -25,22 +25,84 @@ jobs:
       - name: Install Pillow
         run: python -m pip install --upgrade pillow
 
-      - name: Build baseline JPEG
+      - name: Build social preview
         run: |
           python - <<'PY'
-          from PIL import Image, ImageFile
-          ImageFile.LOAD_TRUNCATED_IMAGES = True
-          src = Image.open('assets/social-preview-alla-litvinenko.jpg').convert('RGB')
-          out = src.resize((1200, 630), Image.Resampling.LANCZOS)
-          out.save(
+          from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageFilter
+
+          W, H = 1200, 630
+          bg = Image.new('RGB', (W, H), '#0b0c0e')
+          px = bg.load()
+
+          # subtle charcoal gradient
+          for y in range(H):
+              for x in range(W):
+                  dx = (x - W*0.72) / W
+                  dy = (y - H*0.35) / H
+                  glow = max(0, 1 - (dx*dx*3.2 + dy*dy*4.0))
+                  v = int(11 + glow * 18)
+                  px[x, y] = (v, v, v+1)
+
+          # portrait
+          src = Image.open('assets/alla-litvinenko.jpg.jpg').convert('L').convert('RGB')
+          portrait = ImageOps.fit(src, (500, 530), method=Image.Resampling.LANCZOS, centering=(0.5, 0.42))
+          mask = Image.new('L', portrait.size, 0)
+          ImageDraw.Draw(mask).rounded_rectangle((0,0,499,529), radius=28, fill=255)
+          bg.paste(portrait, (42, 50), mask)
+
+          d = ImageDraw.Draw(bg)
+          border = (175,175,175)
+          d.rounded_rectangle((42,50,542,580), radius=28, outline=border, width=1)
+
+          # decorative lines
+          d.arc((970,-160,1350,220), 80, 200, fill=(100,100,100), width=1)
+          d.arc((-140,430,380,900), 190, 320, fill=(95,95,95), width=1)
+
+          serif = '/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'
+          sans = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
+          sans_b = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+
+          f_kicker = ImageFont.truetype(sans, 17)
+          f_name1 = ImageFont.truetype(serif, 76)
+          f_name2 = ImageFont.truetype(serif, 72)
+          f_sub = ImageFont.truetype(sans, 31)
+          f_roles = ImageFont.truetype(sans, 15)
+          f_bottom = ImageFont.truetype(sans, 19)
+
+          x = 590
+          d.text((x, 82), 'П О Р Т Ф О Л І О', font=f_kicker, fill=(220,220,220))
+          d.line((815, 94, 1135, 94), fill=(95,95,95), width=1)
+
+          d.text((x, 120), 'Алла', font=f_name1, fill=(246,244,240))
+          d.text((x, 198), 'Літвіненко', font=f_name2, fill=(246,244,240))
+
+          d.text((x, 310), 'Копірайтерка, редакторка', font=f_sub, fill=(235,235,235))
+          d.text((x, 350), 'та контент-стратегиня', font=f_sub, fill=(235,235,235))
+
+          roles = 'Senior Copywriter · SEO Copywriter · Content Lead · Content Strategist'
+          d.text((x, 410), roles, font=f_roles, fill=(205,205,205))
+
+          d.line((x, 448, 1130, 448), fill=(85,85,85), width=1)
+
+          # bottom pill
+          pill = (590, 478, 1135, 535)
+          d.rounded_rectangle(pill, radius=28, outline=(160,160,160), width=1)
+          bottom = '10+ років у контенті, маркетингу та комунікаціях'
+          bb = d.textbbox((0,0), bottom, font=f_bottom)
+          tw = bb[2]-bb[0]
+          th = bb[3]-bb[1]
+          d.text((pill[0]+(pill[2]-pill[0]-tw)/2, pill[1]+(pill[3]-pill[1]-th)/2-2),
+                 bottom, font=f_bottom, fill=(225,225,225))
+
+          bg.save(
               'assets/social-preview-facebook.jpg',
               'JPEG',
-              quality=88,
+              quality=90,
               optimize=True,
               progressive=False,
               subsampling=0
           )
-          print(out.size)
+          print('saved', bg.size)
           PY
 
       - name: Commit generated preview
