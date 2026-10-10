@@ -1370,3 +1370,22 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .content-mode-featured .content-mode-result b{color:#fff}
 .content-modes-note{font-size:13px;color:#756f69;line-height:1.65;margin:22px 0 0;max-width:880px}
 @media(max-width:850px){.content-modes-grid{grid-template-columns:1fr}.content-mode-card{padding:26px 24px}.content-mode-card h3{margin:18px 0 12px}}
+
+/* End-to-end content delivery */
+.content-delivery-section{background:#151718;color:#f6f4f0}
+.content-delivery-section .section-head h2{color:#f6f4f0}
+.content-delivery-section .section-head .section-copy{color:#b9b9b7}
+.delivery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.delivery-card{border:1px solid rgba(255,255,255,.12);border-radius:22px;background:linear-gradient(160deg,#222629,#1b1d20);padding:25px;min-width:0;min-height:290px}
+.delivery-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.delivery-no{color:#97a7b6;font-size:11px;letter-spacing:.12em;font-weight:700}
+.delivery-icon{width:48px;height:48px;display:grid;place-items:center;border:1px solid #4a535d;border-radius:13px;background:#2d353d;color:#c9d9e7}
+.delivery-icon svg{height:24px;width:24px}
+.delivery-card h3{font-family:Georgia,'Times New Roman',serif;font-size:clamp(23px,2vw,29px);line-height:1.15;letter-spacing:-.02em;margin:24px 0 12px;color:#fff}
+.delivery-card p{font-size:13px;line-height:1.72;color:#c4c6c8;margin:0}
+.delivery-summary{margin-top:16px;border:1px solid rgba(255,255,255,.13);background:#252a2e;border-radius:20px;padding:24px 28px;display:flex;align-items:center;gap:22px}
+.delivery-summary-mark{font-size:30px;color:#bed7eb}
+.delivery-summary b{font-size:17px;color:#fff}
+.delivery-summary p{font-size:14px;line-height:1.7;color:#c6c9cb;margin:8px 0 0}
+@media(max-width:1050px){.delivery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.delivery-card{min-height:260px}}
+@media(max-width:650px){.delivery-grid{grid-template-columns:1fr}.delivery-card{min-height:0}.delivery-summary{align-items:flex-start;padding:22px}}
