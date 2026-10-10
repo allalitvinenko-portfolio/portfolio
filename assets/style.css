@@ -1397,3 +1397,19 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .content-modes-section .content-mode-featured .content-mode-top{color:#bcd5ea!important}
 .content-modes-section .content-mode-featured .content-mode-result{color:#d5d8db}
 .content-modes-section .content-mode-card h3{font-weight:700}
+
+/* Editorial portrait storytelling inserts */
+.editorial-portrait-feature{display:grid;grid-template-columns:minmax(240px,.76fr) minmax(0,1.24fr);align-items:stretch;overflow:hidden;border:1px solid #d7d3cb;border-radius:26px;background:#f0ede7;margin:12px 0 42px;min-height:365px}
+.editorial-portrait-image{position:relative;min-height:350px;overflow:hidden;background:#d2d0ce}
+.editorial-portrait-image img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 25%;filter:grayscale(1);transition:transform .45s ease}
+.editorial-portrait-feature:hover .editorial-portrait-image img{transform:scale(1.035)}
+.editorial-portrait-copy{padding:clamp(28px,4.3vw,65px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.editorial-portrait-eyebrow{display:block;letter-spacing:.13em;text-transform:uppercase;font-size:11px;font-weight:700;color:#827a72;margin-bottom:22px}
+.editorial-portrait-copy h3{font-family:Georgia,'Times New Roman',serif;font-size:clamp(27px,3vw,44px);line-height:1.12;letter-spacing:-.035em;color:#22201e;margin:0 0 20px}
+.editorial-portrait-copy p{font-size:15px;line-height:1.76;color:#5d5751;max-width:650px;margin:0 0 25px}
+.editorial-portrait-signature{font-size:12px;letter-spacing:.045em;color:#746b62;font-weight:600;border-top:1px solid #cfc8bd;padding-top:15px}
+.editorial-portrait-signature i{font-size:18px;font-style:normal;margin-left:10px}
+.editorial-portrait-feature--process{grid-template-columns:minmax(0,1.24fr) minmax(240px,.76fr);background:#e8e3db}
+.editorial-portrait-feature--process .editorial-portrait-image{grid-column:2;grid-row:1}
+.editorial-portrait-feature--process .editorial-portrait-copy{grid-column:1;grid-row:1}
+@media(max-width:800px){.editorial-portrait-feature,.editorial-portrait-feature--process{grid-template-columns:1fr;min-height:0}.editorial-portrait-image,.editorial-portrait-feature--process .editorial-portrait-image{grid-column:1;grid-row:1;min-height:340px;height:52vw;max-height:480px}.editorial-portrait-copy,.editorial-portrait-feature--process .editorial-portrait-copy{grid-column:1;grid-row:2;padding:28px 25px 32px}.editorial-portrait-copy h3{font-size:clamp(27px,6vw,38px)}.editorial-portrait-feature{margin-bottom:30px}}
