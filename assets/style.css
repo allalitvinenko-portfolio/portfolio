@@ -1352,3 +1352,21 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .seo-hero-image img{display:block;width:100%;height:auto;max-height:390px;object-fit:cover;object-position:top;transition:transform .22s ease}
 .seo-hero-image:hover img{transform:scale(1.025)}
 @media(max-width:750px){.seo-feature-top{grid-template-columns:1fr}.seo-hero-image{max-width:420px}.seo-hero-image img{max-height:none}}
+
+/* Content production and AI humanization */
+.content-modes-section{background:#f0ede8;color:#201f1d}
+.content-modes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.content-mode-card{min-width:0;display:flex;flex-direction:column;padding:30px 26px;background:#fffdfa;border:1px solid #ded9d1;border-radius:22px}
+.content-mode-top{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#817b73;font-size:11px;letter-spacing:.09em;font-weight:700}
+.content-mode-symbol{font-size:28px;font-weight:400;color:#827565}
+.content-mode-card h3{font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,2.6vw,34px);line-height:1.12;margin:25px 0 16px;letter-spacing:-.025em}
+.content-mode-card>p{font-size:15px;line-height:1.7;color:#5a554f;margin:0 0 25px}
+.content-mode-result{margin-top:auto;padding-top:19px;border-top:1px solid #e6e0d9;display:grid;gap:8px;font-size:14px;line-height:1.55;color:#504b45}
+.content-mode-result b{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#262420}
+.content-mode-featured{background:#24292f;color:#fbf9f4;border-color:#343a41}
+.content-mode-featured .content-mode-top,.content-mode-featured .content-mode-symbol{color:#aacaf1}
+.content-mode-featured>p,.content-mode-featured .content-mode-result{color:#d4d5d7}
+.content-mode-featured .content-mode-result{border-color:#454a51}
+.content-mode-featured .content-mode-result b{color:#fff}
+.content-modes-note{font-size:13px;color:#756f69;line-height:1.65;margin:22px 0 0;max-width:880px}
+@media(max-width:850px){.content-modes-grid{grid-template-columns:1fr}.content-mode-card{padding:26px 24px}.content-mode-card h3{margin:18px 0 12px}}
