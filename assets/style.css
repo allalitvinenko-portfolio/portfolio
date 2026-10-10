@@ -1422,3 +1422,14 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 #benefits .editorial-portrait-feature{margin-top:12px}
 #benefits .editorial-portrait-image img,#process .editorial-portrait-image img{object-position:center 20%}
 @media(max-width:700px){#benefits .section-head{margin-bottom:24px}#benefits .section-head h2{font-size:clamp(36px,9vw,56px)}#benefits .section-head .section-copy{margin-top:14px!important}}
+
+/* 2026 portfolio final polish: evidence-led metrics and responsive readability */
+.stats-eight .stat{min-width:0;overflow-wrap:break-word;hyphens:auto}
+.stats-eight .stat strong{font-size:clamp(27px,2.6vw,43px);line-height:1.12;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.stats-eight .stat b{font-size:14px;line-height:1.45}
+.stats-eight .stat p{font-size:12.5px;line-height:1.55}
+.portfolio-lane{scroll-margin-top:85px}
+#cv,#selected,#career-marketing,#career-copywriting{scroll-margin-top:95px}
+@media(max-width:1020px){.stats-eight .stat strong{font-size:clamp(28px,4.4vw,41px)}}
+@media(max-width:700px){.stats-eight .stat{padding:22px 18px;min-height:unset}.stats-eight .stat strong{font-size:clamp(29px,7vw,42px)}}
+@media(max-width:520px){.stats-eight .stat strong{font-size:35px}}
