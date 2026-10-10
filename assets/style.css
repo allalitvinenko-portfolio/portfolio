@@ -1433,3 +1433,31 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 @media(max-width:1020px){.stats-eight .stat strong{font-size:clamp(28px,4.4vw,41px)}}
 @media(max-width:700px){.stats-eight .stat{padding:22px 18px;min-height:unset}.stats-eight .stat strong{font-size:clamp(29px,7vw,42px)}}
 @media(max-width:520px){.stats-eight .stat strong{font-size:35px}}
+
+/* Section-order visual QA, October 2026: preserve all portfolio blocks */
+#cv,#selected{position:relative}
+.section.light + .section.light{border-top:1px solid rgba(40,38,34,.12)}
+#cv .section-head,#selected .section-head{margin-bottom:28px}
+#cv .cv-grid .value-card{display:flex;flex-direction:column;min-width:0}
+#cv .cv-grid .value-card .actions{margin-top:auto;padding-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+#cv .cv-grid .value-card .btn{max-width:100%;white-space:normal;text-align:center;overflow-wrap:anywhere}
+#selected .portfolio-lane{min-width:0}
+#selected .lane-items{min-width:0}
+#selected .lane-static{min-width:0;overflow-wrap:break-word}
+#selected a,#cv a{overflow-wrap:anywhere}
+.stats-eight .stat{min-width:0}
+@media(max-width:1020px){
+  #cv .cv-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #selected .portfolio-lanes{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .section{padding-top:60px;padding-bottom:60px}
+  #cv .cv-grid{grid-template-columns:1fr}
+  #cv .section-head,#selected .section-head{margin-bottom:22px}
+  #selected .portfolio-lane{padding:22px 18px}
+  #cv .cv-grid .value-card{min-height:0}
+}
+@media(max-width:420px){
+  #cv .cv-grid .value-card .actions{flex-direction:column;align-items:stretch}
+  #cv .cv-grid .value-card .btn{width:100%;justify-content:center}
+}
