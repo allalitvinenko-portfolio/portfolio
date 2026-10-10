@@ -1413,3 +1413,12 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .editorial-portrait-feature--process .editorial-portrait-image{grid-column:2;grid-row:1}
 .editorial-portrait-feature--process .editorial-portrait-copy{grid-column:1;grid-row:1}
 @media(max-width:800px){.editorial-portrait-feature,.editorial-portrait-feature--process{grid-template-columns:1fr;min-height:0}.editorial-portrait-image,.editorial-portrait-feature--process .editorial-portrait-image{grid-column:1;grid-row:1;min-height:340px;height:52vw;max-height:480px}.editorial-portrait-copy,.editorial-portrait-feature--process .editorial-portrait-copy{grid-column:1;grid-row:2;padding:28px 25px 32px}.editorial-portrait-copy h3{font-size:clamp(27px,6vw,38px)}.editorial-portrait-feature{margin-bottom:30px}}
+
+/* Recruiter-first layout: give large section heading a full line above the image */
+#benefits .section-head{display:block!important;max-width:none!important;margin-bottom:36px}
+#benefits .section-head>div:first-child{width:100%;max-width:none}
+#benefits .section-head h2{max-width:1050px;font-size:clamp(38px,5.1vw,76px);line-height:1.02}
+#benefits .section-head .section-copy{margin-top:20px!important;max-width:810px!important;width:100%!important;font-size:clamp(15px,1.45vw,18px);line-height:1.65}
+#benefits .editorial-portrait-feature{margin-top:12px}
+#benefits .editorial-portrait-image img,#process .editorial-portrait-image img{object-position:center 20%}
+@media(max-width:700px){#benefits .section-head{margin-bottom:24px}#benefits .section-head h2{font-size:clamp(36px,9vw,56px)}#benefits .section-head .section-copy{margin-top:14px!important}}
