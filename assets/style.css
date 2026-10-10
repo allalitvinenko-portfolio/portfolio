@@ -1322,3 +1322,25 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
     margin:10px 0 0;
   }
 }
+
+/* Featured SEO expertise case */
+.seo-feature{margin-top:18px;min-height:0;background:linear-gradient(135deg,#191c1e,#111214 70%);padding:34px}
+.seo-feature-top{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:48px;align-items:start}
+.seo-feature h3{font-size:clamp(32px,4vw,54px);max-width:760px;line-height:1.02;margin:16px 0 24px}
+.seo-feature .seo-lead{font-size:17px;line-height:1.6;color:#e2e1df;max-width:920px}
+.seo-feature p{max-width:950px;font-size:14px;line-height:1.8}
+.seo-feature .seo-proof-note{color:#c3c3bf}
+.seo-feature-aside{border-left:1px solid rgba(255,255,255,.16);padding:12px 0 12px 24px;display:flex;flex-direction:column;gap:13px;color:#ccc}
+.seo-feature-aside strong{font-family:Georgia,serif;font-size:29px;line-height:1.04;color:#fff}
+.seo-mini-label{font-size:10px;letter-spacing:.12em;color:#aaa}
+.seo-feature-aside>span:last-child{font-size:12px;line-height:1.6}
+.seo-proof-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:30px}
+.seo-proof{min-width:0;margin:0;border:1px solid rgba(255,255,255,.12);border-radius:17px;overflow:hidden;background:#202328}
+.seo-proof a{display:block;aspect-ratio:1.75;overflow:hidden}
+.seo-proof img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .25s}
+.seo-proof a:hover img{transform:scale(1.025)}
+.seo-proof figcaption{padding:15px 17px;display:flex;flex-direction:column;gap:5px;color:#fff}
+.seo-proof figcaption strong{font-size:14px}
+.seo-proof figcaption span{font-size:12px;color:#aaa}
+.seo-feature .seo-evidence-foot{font-size:12px;color:#a5a5a5;margin:18px 0 0}
+@media(max-width:750px){.seo-feature{padding:22px}.seo-feature-top{grid-template-columns:1fr;gap:20px}.seo-feature-aside{border-left:0;border-top:1px solid rgba(255,255,255,.15);padding:18px 0 0}.seo-proof-gallery{grid-template-columns:1fr}.seo-feature .seo-lead{font-size:15px}}
