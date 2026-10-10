@@ -1344,3 +1344,11 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .seo-proof figcaption span{font-size:12px;color:#aaa}
 .seo-feature .seo-evidence-foot{font-size:12px;color:#a5a5a5;margin:18px 0 0}
 @media(max-width:750px){.seo-feature{padding:22px}.seo-feature-top{grid-template-columns:1fr;gap:20px}.seo-feature-aside{border-left:0;border-top:1px solid rgba(255,255,255,.15);padding:18px 0 0}.seo-proof-gallery{grid-template-columns:1fr}.seo-feature .seo-lead{font-size:15px}}
+
+/* Main evidence image in SEO expertise */
+.seo-feature-top{grid-template-columns:minmax(0,1fr) minmax(255px,335px)}
+.seo-feature-aside{min-width:0}
+.seo-hero-image{display:block;width:100%;margin-top:20px;border:1px solid rgba(255,255,255,.17);border-radius:14px;overflow:hidden;background:#202328;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+.seo-hero-image img{display:block;width:100%;height:auto;max-height:390px;object-fit:cover;object-position:top;transition:transform .22s ease}
+.seo-hero-image:hover img{transform:scale(1.025)}
+@media(max-width:750px){.seo-feature-top{grid-template-columns:1fr}.seo-hero-image{max-width:420px}.seo-hero-image img{max-height:none}}
