@@ -1389,3 +1389,11 @@ h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin
 .delivery-summary p{font-size:14px;line-height:1.7;color:#c6c9cb;margin:8px 0 0}
 @media(max-width:1050px){.delivery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.delivery-card{min-height:260px}}
 @media(max-width:650px){.delivery-grid{grid-template-columns:1fr}.delivery-card{min-height:0}.delivery-summary{align-items:flex-start;padding:22px}}
+
+/* Compact iconic cards for content modes, override inherited typography */
+.content-modes-section .content-mode-card .content-mode-symbol svg{width:27px;height:27px;display:block}
+.content-modes-section .content-mode-card .content-mode-result span{display:block}
+.content-modes-section .content-mode-card .content-mode-top span:first-child{font-family:Arial,sans-serif}
+.content-modes-section .content-mode-featured .content-mode-top{color:#bcd5ea!important}
+.content-modes-section .content-mode-featured .content-mode-result{color:#d5d8db}
+.content-modes-section .content-mode-card h3{font-weight:700}
