@@ -1,1 +1,72 @@
-<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=./index.html"><title>Portfolio</title>
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>404 — Сторінку не знайдено | Алла Літвіненко</title>
+  <link rel="stylesheet" href="/portfolio/assets/style.css?v=20261011-polish">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(140deg, #080809, #101114 58%, #14161a);
+    }
+    .error-page .error-main {
+      flex: 1;
+      display: grid;
+      align-items: center;
+      padding-block: clamp(40px, 8vw, 100px);
+    }
+    .error-page .error-card {
+      width: 100%;
+      max-width: 860px;
+      margin-inline: auto;
+      padding: clamp(24px, 5vw, 64px);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, .018);
+    }
+    .error-page h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      overflow-wrap: break-word;
+    }
+    .error-page .error-copy {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
+    }
+    .error-page a:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 5px;
+    }
+    @media (max-width: 520px) {
+      .error-page .actions { flex-direction: column; }
+      .error-page .btn { padding: 14px 18px; text-align: center; }
+    }
+  </style>
+</head>
+<body class="error-page">
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="/portfolio/" aria-label="Алла Літвіненко — на головну">AL</a>
+    </div>
+  </header>
+  <main class="wrap error-main">
+    <div class="error-card">
+      <h1>404 — Сторінку не знайдено</h1>
+      <p class="error-copy">Можливо, сторінку перемістили або адреса змінилася</p>
+      <nav class="actions" aria-label="Навігація зі сторінки помилки">
+        <a class="btn primary" href="/portfolio/">На головну</a>
+        <a class="btn secondary" href="/portfolio/#selected">Переглянути кейси</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>
